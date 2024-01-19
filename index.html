@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        {!! Form::open(['route' => 'admin.posts.store', '
+        method'=>'post']) !!}
+        @include('admin.posts._form')
+        {{-- <input type="text" name="title" placeholder="Titulo
+                do Post"><br><br> --}}
+        {{-- <textarea name="content" id="" cols="30" rows="1
+                0" placeholder="Conteúdo"></textarea><br><br> --}}
+        {{-- {!! Form::label('title','Title:') !!}
+        {!! Form::text('title', null , ['placeholder'=>'Titulo do
+        Post'] ) !!}<br><br> --}}
+        {{-- {!! Form::label('category_id','Categoria:') !!}
+        {!! Form::select('category_id',$categories) !!}<br><br> --}}
+        </ul>
+    </div>
+    </div>
+</body>
+
+</html>
